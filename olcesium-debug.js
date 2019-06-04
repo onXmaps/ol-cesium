@@ -162,9 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var AbstractSynchronizer =
-/*#__PURE__*/
-function () {
+var AbstractSynchronizer = /*#__PURE__*/function () {
   /**
    * @param {!ol.Map} map
    * @param {!Cesium.Scene} scene
@@ -243,8 +241,8 @@ function () {
    */
   ;
 
-  _proto.orderLayers = function orderLayers() {} // Ordering logics is handled in subclasses.
-
+  _proto.orderLayers = function orderLayers() {// Ordering logics is handled in subclasses.
+  }
   /**
    * Add a layer hierarchy.
    * @param {ol.layer.Base} root
@@ -556,12 +554,16 @@ function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function _createForOfIteratorHelperLoose(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; return function () { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } it = o[Symbol.iterator](); return it.next.bind(it); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 /**
  * @module olcs.AutoRenderLoop
  */
-var AutoRenderLoop =
-/*#__PURE__*/
-function () {
+var AutoRenderLoop = /*#__PURE__*/function () {
   /**
    * @constructor
    * @param {olcs.OLCesium} ol3d
@@ -585,19 +587,8 @@ function () {
     this.scene_.requestRenderMode = true;
     this.scene_.maximumRenderTimeChange = 1000;
 
-    for (var _iterator = this.repaintEventNames_, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-      var _ref;
-
-      if (_isArray) {
-        if (_i >= _iterator.length) break;
-        _ref = _iterator[_i++];
-      } else {
-        _i = _iterator.next();
-        if (_i.done) break;
-        _ref = _i.value;
-      }
-
-      var repaintKey = _ref;
+    for (var _iterator = _createForOfIteratorHelperLoose(this.repaintEventNames_), _step; !(_step = _iterator()).done;) {
+      var repaintKey = _step.value;
       this.canvas_.addEventListener(repaintKey, this._boundNotifyRepaintRequired, false);
     }
 
@@ -611,19 +602,8 @@ function () {
   ;
 
   _proto.disable = function disable() {
-    for (var _iterator2 = this.repaintEventNames_, _isArray2 = Array.isArray(_iterator2), _i2 = 0, _iterator2 = _isArray2 ? _iterator2 : _iterator2[Symbol.iterator]();;) {
-      var _ref2;
-
-      if (_isArray2) {
-        if (_i2 >= _iterator2.length) break;
-        _ref2 = _iterator2[_i2++];
-      } else {
-        _i2 = _iterator2.next();
-        if (_i2.done) break;
-        _ref2 = _i2.value;
-      }
-
-      var repaintKey = _ref2;
+    for (var _iterator2 = _createForOfIteratorHelperLoose(this.repaintEventNames_), _step2; !(_step2 = _iterator2()).done;) {
+      var repaintKey = _step2.value;
       this.canvas_.removeEventListener(repaintKey, this._boundNotifyRepaintRequired, false);
     }
 
@@ -676,9 +656,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Camera =
-/*#__PURE__*/
-function () {
+var Camera = /*#__PURE__*/function () {
   /**
    * This object takes care of additional 3d-specific properties of the view and
    * ensures proper synchronization with the underlying raw Cesium.Camera object.
@@ -1217,6 +1195,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./core.js */ "./src/olcs/core.js");
 /* harmony import */ var _core_VectorLayerCounterpart_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./core/VectorLayerCounterpart.js */ "./src/olcs/core/VectorLayerCounterpart.js");
 /* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./util.js */ "./src/olcs/util.js");
+function _createForOfIteratorHelperLoose(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; return function () { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } it = o[Symbol.iterator](); return it.next.bind(it); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 /**
  * @module olcs.FeatureConverter
  */
@@ -1236,9 +1220,7 @@ __webpack_require__.r(__webpack_exports__);
  * @property {Cesium.ModelFromGltfOptions} cesiumOptions
  */
 
-var FeatureConverter =
-/*#__PURE__*/
-function () {
+var FeatureConverter = /*#__PURE__*/function () {
   /**
    * Concrete base class for converting from OpenLayers3 vectors to Cesium
    * primitives.
@@ -1659,19 +1641,8 @@ function () {
         vertexFormat: Cesium.VertexFormat.POSITION_ONLY
       };
 
-      for (var _iterator = positions, _isArray = Array.isArray(_iterator), _i2 = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-        var _ref;
-
-        if (_isArray) {
-          if (_i2 >= _iterator.length) break;
-          _ref = _iterator[_i2++];
-        } else {
-          _i2 = _iterator.next();
-          if (_i2.done) break;
-          _ref = _i2.value;
-        }
-
-        var linePositions = _ref;
+      for (var _iterator = _createForOfIteratorHelperLoose(positions), _step; !(_step = _iterator()).done;) {
+        var linePositions = _step.value;
         geometryOptions.positions = linePositions;
         geometryInstances.push(new Cesium.GeometryInstance({
           geometry: new Cesium.CorridorGeometry(geometryOptions),
@@ -1839,8 +1810,8 @@ function () {
           var _positions = [hierarchy.positions];
 
           if (hierarchy.holes) {
-            for (var _i3 = 0; _i3 < hierarchy.holes.length; ++_i3) {
-              _positions.push(hierarchy.holes[_i3].positions);
+            for (var _i2 = 0; _i2 < hierarchy.holes.length; ++_i2) {
+              _positions.push(hierarchy.holes[_i2].positions);
             }
           }
 
@@ -1854,8 +1825,8 @@ function () {
             });
             var geometryInstances = [];
 
-            for (var _i4 = 0, _positions2 = _positions; _i4 < _positions2.length; _i4++) {
-              var linePositions = _positions2[_i4];
+            for (var _iterator2 = _createForOfIteratorHelperLoose(_positions), _step2; !(_step2 = _iterator2()).done;) {
+              var linePositions = _step2.value;
               var polylineGeometry = new Cesium.GroundPolylineGeometry({
                 positions: linePositions,
                 width: width
@@ -1971,6 +1942,7 @@ function () {
         color = new Cesium.Color(1.0, 1.0, 1.0, opacity);
       }
 
+      var scale = imageStyle.getScale();
       var heightReference = this.getHeightReference(layer, feature, olGeometry);
       var bbOptions =
       /** @type {Cesium.optionsBillboardCollectionAdd} */
@@ -1978,16 +1950,18 @@ function () {
         // always update Cesium externs before adding a property
         image: image,
         color: color,
-        scale: imageStyle.getScale(),
+        scale: scale,
         heightReference: heightReference,
         position: position
-      };
+      }; // merge in cesium options from openlayers feature
+
+      Object.assign(bbOptions, feature.get('cesiumOptions'));
 
       if (imageStyle instanceof ol_style_Icon_js__WEBPACK_IMPORTED_MODULE_1___default.a) {
         var anchor = imageStyle.getAnchor();
 
         if (anchor) {
-          bbOptions.pixelOffset = new Cesium.Cartesian2(image.width / 2 - anchor[0], image.height / 2 - anchor[1]);
+          bbOptions.pixelOffset = new Cesium.Cartesian2((image.width / 2 - anchor[0]) * scale, (image.height / 2 - anchor[1]) * scale);
         }
       }
 
@@ -2560,19 +2534,19 @@ function () {
 
       var primitives = null;
 
-      for (var _i5 = 0; _i5 < styles.length; _i5++) {
-        var prims = this.olFeatureToCesium(olLayer, feature, styles[_i5], context);
+      for (var _i3 = 0; _i3 < styles.length; _i3++) {
+        var prims = this.olFeatureToCesium(olLayer, feature, styles[_i3], context);
 
         if (prims) {
           if (!primitives) {
             primitives = prims;
           } else if (prims) {
-            var _i6 = 0,
+            var _i4 = 0,
                 prim = void 0;
 
-            while (prim = prims.get(_i6)) {
+            while (prim = prims.get(_i4)) {
               primitives.add(prim);
-              _i6++;
+              _i4++;
             }
           }
         }
@@ -2614,7 +2588,7 @@ function () {
     var layerStyle = layer.getStyleFunction();
     var styles = this.computePlainStyle(layer, feature, layerStyle, resolution);
 
-    if (!styles.length) {
+    if (!styles || !styles.length) {
       // only 'render' features with a style
       return null;
     }
@@ -2632,12 +2606,12 @@ function () {
       if (!primitives) {
         primitives = prims;
       } else if (prims) {
-        var _i7 = 0,
+        var _i5 = 0,
             prim = void 0;
 
-        while (prim = prims.get(_i7)) {
+        while (prim = prims.get(_i5)) {
           primitives.add(prim);
-          _i7++;
+          _i5++;
         }
       }
     }
@@ -2672,6 +2646,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _RasterSynchronizer_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./RasterSynchronizer.js */ "./src/olcs/RasterSynchronizer.js");
 /* harmony import */ var _VectorSynchronizer_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./VectorSynchronizer.js */ "./src/olcs/VectorSynchronizer.js");
 /* harmony import */ var _OverlaySynchronizer_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./OverlaySynchronizer.js */ "./src/olcs/OverlaySynchronizer.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 /**
  * @module olcs.OLCesium
  */
@@ -2699,9 +2677,7 @@ __webpack_require__.r(__webpack_exports__);
  *      `Cesium.Scene`.
  */
 
-var OLCesium =
-/*#__PURE__*/
-function () {
+var OLCesium = /*#__PURE__*/function () {
   /**
    * @param {!OLCesiumOptions} options Options.
    * @constructor
@@ -2769,27 +2745,18 @@ function () {
     var containerAttribute = document.createAttribute('style');
     containerAttribute.value = fillArea + "visibility:hidden;";
     this.container_.setAttributeNode(containerAttribute);
-    var targetElement = options.target || null;
+    var targetElement = options.target || this.map_.getViewport();
 
-    if (targetElement) {
-      if (typeof targetElement === 'string') {
-        targetElement = document.getElementById(targetElement);
-      }
-
-      targetElement.appendChild(this.container_);
-    } else {
-      var oc = this.map_.getViewport().querySelector('.ol-overlaycontainer');
-
-      if (oc && oc.parentNode) {
-        oc.parentNode.insertBefore(this.container_, oc);
-      }
+    if (typeof targetElement === 'string') {
+      targetElement = document.getElementById(targetElement);
     }
+
+    targetElement.appendChild(this.container_);
     /**
      * Whether the Cesium container is placed over the ol map.
      * @type {boolean}
      * @private
      */
-
 
     this.isOverMap_ = !targetElement;
 
@@ -3217,7 +3184,6 @@ function () {
         }
 
         this.map_.getOverlayContainer().classList.add('olcs-hideoverlay');
-        this.map_.getOverlayContainerStopEvent().classList.add('olcs-hideoverlay');
       }
 
       this.camera_.readFromView();
@@ -3239,7 +3205,6 @@ function () {
         };
 
         this.map_.getOverlayContainer().classList.remove('olcs-hideoverlay');
-        this.map_.getOverlayContainerStopEvent().classList.remove('olcs-hideoverlay');
 
         if (this.hiddenRootGroup_) {
           this.hiddenRootGroup_.setVisible(true);
@@ -3379,21 +3344,22 @@ function () {
     if (!view.isDef() || isNaN(center[0]) || isNaN(center[1])) {
       throw new Error("The OpenLayers map is not properly initialized: " + center + " / " + view.getResolution());
     }
-  };
+  }
+  /**
+   * @type {ol.Feature}
+   */
+  ;
 
-  return OLCesium;
-}();
-
-Object.defineProperties(OLCesium.prototype, {
-  'trackedFeature': {
-    'get':
-    /** @this {olcs.OLCesium} */
-    function get() {
+  _createClass(OLCesium, [{
+    key: "trackedFeature",
+    get: function get() {
       return this.trackedFeature_;
-    },
-    'set':
-    /** @this {olcs.OLCesium} */
-    function set(feature) {
+    }
+    /**
+     * @param {ol.Feature} feature
+     */
+    ,
+    set: function set(feature) {
       if (this.trackedFeature_ !== feature) {
         var scene = this.scene_; //Stop tracking
 
@@ -3440,8 +3406,11 @@ Object.defineProperties(OLCesium.prototype, {
         this.trackedEntity_ = this.dataSourceDisplay_.defaultDataSource.entities.add(options);
       }
     }
-  }
-});
+  }]);
+
+  return OLCesium;
+}();
+
 /* harmony default export */ __webpack_exports__["default"] = (OLCesium);
 
 /***/ }),
@@ -3463,9 +3432,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var OverlaySynchronizer =
-/*#__PURE__*/
-function () {
+var OverlaySynchronizer = /*#__PURE__*/function () {
   /**
   * @param {!ol.Map} map
   * @param {!Cesium.Scene} scene
@@ -3675,9 +3642,7 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 
 
-var RasterSynchronizer =
-/*#__PURE__*/
-function (_olcsAbstractSynchron) {
+var RasterSynchronizer = /*#__PURE__*/function (_olcsAbstractSynchron) {
   _inheritsLoose(RasterSynchronizer, _olcsAbstractSynchron);
 
   /**
@@ -3847,7 +3812,7 @@ function (_olcsAbstractSynchron) {
     while (queue.length > 0) {
       var olLayer = queue.splice(0, 1)[0];
       layers.push(olLayer);
-      zIndices[Object(_util_js__WEBPACK_IMPORTED_MODULE_1__["getUid"])(olLayer)] = olLayer.getZIndex();
+      zIndices[Object(_util_js__WEBPACK_IMPORTED_MODULE_1__["getUid"])(olLayer)] = olLayer.getZIndex() || 0;
 
       if (olLayer instanceof ol_layer_Group_js__WEBPACK_IMPORTED_MODULE_0___default.a) {
         var sublayers = olLayer.getLayers();
@@ -3905,6 +3870,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util.js */ "./src/olcs/util.js");
 /* harmony import */ var ol_Observable_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/Observable.js */ "ol/Observable.js");
 /* harmony import */ var ol_Observable_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ol_Observable_js__WEBPACK_IMPORTED_MODULE_3__);
+function _createForOfIteratorHelperLoose(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; return function () { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } it = o[Symbol.iterator](); return it.next.bind(it); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
@@ -3924,9 +3895,7 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
  * @property {!import('olsc/OverlaySynchronizer.js').default} synchronizer
  */
 
-var SynchronizedOverlay =
-/*#__PURE__*/
-function (_olOverlay) {
+var SynchronizedOverlay = /*#__PURE__*/function (_olOverlay) {
   _inheritsLoose(SynchronizedOverlay, _olOverlay);
 
   /**
@@ -4153,19 +4122,8 @@ function (_olOverlay) {
 
     if (element) {
       if (element.parentNode && element.parentNode.childNodes) {
-        for (var _iterator = element.parentNode.childNodes, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-          var _ref;
-
-          if (_isArray) {
-            if (_i >= _iterator.length) break;
-            _ref = _iterator[_i++];
-          } else {
-            _i = _iterator.next();
-            if (_i.done) break;
-            _ref = _i.value;
-          }
-
-          var node = _ref;
+        for (var _iterator = _createForOfIteratorHelperLoose(element.parentNode.childNodes), _step; !(_step = _iterator()).done;) {
+          var node = _step.value;
           var clonedNode = cloneNode(node, null);
           this.element.appendChild(clonedNode);
         }
@@ -4302,9 +4260,7 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 
 
-var VectorSynchronizer =
-/*#__PURE__*/
-function (_olcsAbstractSynchron) {
+var VectorSynchronizer = /*#__PURE__*/function (_olcsAbstractSynchron) {
   _inheritsLoose(VectorSynchronizer, _olcsAbstractSynchron);
 
   /**
@@ -4507,18 +4463,16 @@ function (_olcsAbstractSynchron) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return LazyLoader; });
 /**
  * @module olcs.contrib.LazyLoader
  */
-var exports =
-/*#__PURE__*/
-function () {
+var LazyLoader = /*#__PURE__*/function () {
   /**
    * @param {string} url
-   * @struct
    * @api
    */
-  function exports(url) {
+  function LazyLoader(url) {
     /**
      * @type {Promise<undefined>}
      * @protected
@@ -4537,7 +4491,7 @@ function () {
    */
 
 
-  var _proto = exports.prototype;
+  var _proto = LazyLoader.prototype;
 
   _proto.load = function load() {
     var _this = this;
@@ -4563,10 +4517,10 @@ function () {
     return this.promise;
   };
 
-  return exports;
+  return LazyLoader;
 }();
 
-/* harmony default export */ __webpack_exports__["default"] = (exports);
+
 
 /***/ }),
 
@@ -4585,9 +4539,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../math.js */ "./src/olcs/math.js");
 /* harmony import */ var ol_Observable_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol/Observable.js */ "ol/Observable.js");
 /* harmony import */ var ol_Observable_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ol_Observable_js__WEBPACK_IMPORTED_MODULE_4__);
-function isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _construct(Parent, args, Class) { if (_isNativeReflectConstruct()) { _construct = Reflect.construct; } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }
 
-function _construct(Parent, args, Class) { if (isNativeReflectConstruct()) { _construct = Reflect.construct; } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
@@ -4607,9 +4561,7 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
  * @property {import('ol/extent.js').Extent} [cameraExtentInRadians]
  */
 
-var Manager =
-/*#__PURE__*/
-function (_olObservable) {
+var Manager = /*#__PURE__*/function (_olObservable) {
   _inheritsLoose(Manager, _olObservable);
 
   /**
@@ -5072,8 +5024,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ol_layer_Image_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ol_layer_Image_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/proj.js */ "ol/proj.js");
 /* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ol_proj_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var ol_source_ImageStatic__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol/source/ImageStatic */ "ol/source/ImageStatic");
-/* harmony import */ var ol_source_ImageStatic__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ol_source_ImageStatic__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var ol_source_ImageStatic_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol/source/ImageStatic.js */ "ol/source/ImageStatic.js");
+/* harmony import */ var ol_source_ImageStatic_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ol_source_ImageStatic_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var ol_source_ImageWMS_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ol/source/ImageWMS.js */ "ol/source/ImageWMS.js");
 /* harmony import */ var ol_source_ImageWMS_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(ol_source_ImageWMS_js__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var ol_source_TileImage_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol/source/TileImage.js */ "ol/source/TileImage.js");
@@ -5133,8 +5085,7 @@ exports.computePixelSizeAtCoordinate = function (scene, target) {
   var canvas = scene.canvas;
   var frustum = camera.frustum;
   var distance = Cesium.Cartesian3.magnitude(Cesium.Cartesian3.subtract(camera.position, target, new Cesium.Cartesian3()));
-  var pixelSize = new Cesium.Cartesian2();
-  return frustum.getPixelDimensions(canvas.clientWidth, canvas.clientHeight, distance, pixelSize);
+  return frustum.getPixelDimensions(canvas.clientWidth, canvas.clientHeight, distance, scene.pixelRatio, new Cesium.Cartesian2());
 };
 /**
  * Compute bounding box around a target point.
@@ -5492,7 +5443,7 @@ exports.tileLayerToImageryLayer = function (olMap, olLayer, viewProj) {
     else {
         return null;
       }
-  } else if (source instanceof ol_source_ImageStatic__WEBPACK_IMPORTED_MODULE_4___default.a) {
+  } else if (source instanceof ol_source_ImageStatic_js__WEBPACK_IMPORTED_MODULE_4___default.a) {
     var _projection = _util_js__WEBPACK_IMPORTED_MODULE_10__["default"].getSourceProjection(source);
 
     if (!_projection) {
@@ -5756,7 +5707,12 @@ exports.normalizeView = function (view, angle) {
 
   var resolution = view.getResolution();
   view.setRotation(angle);
-  view.setResolution(view.constrainResolution(resolution));
+
+  if (view.constrainResolution) {
+    view.setResolution(view.constrainResolution(resolution));
+  } else {
+    view.setResolution(view.getConstrainedResolution(resolution));
+  }
 };
 /**
  * Check if the given projection is managed by Cesium (WGS84 or Mercator Spheric)
@@ -5788,17 +5744,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/proj.js */ "ol/proj.js");
 /* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ol_proj_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util.js */ "./src/olcs/util.js");
+/* harmony import */ var ol_source_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol/source.js */ "ol/source.js");
+/* harmony import */ var ol_source_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ol_source_js__WEBPACK_IMPORTED_MODULE_2__);
 /**
  * @module olcs.core.OLImageryProvider
  */
 
 
 
+
+var olUseNewCoordinates = function () {
+  var tileSource = new ol_source_js__WEBPACK_IMPORTED_MODULE_2__["Tile"]({
+    projection: 'EPSG:3857',
+    wrapX: true
+  });
+  var tileCoord = tileSource.getTileCoordForTileUrlFunction([6, -31, 22]);
+  return tileCoord && tileCoord[1] === 33 && tileCoord[2] === 22; // See b/test/spec/ol/source/tile.test.js
+  // of e9a30c5cb7e3721d9370025fbe5472c322847b35 in OpenLayers repository
+}();
+
 var OLImageryProvider
 /* should not extend Cesium.ImageryProvider */
-=
-/*#__PURE__*/
-function () {
+= /*#__PURE__*/function () {
   /**
    * Special class derived from Cesium.ImageryProvider
    * that is connected to the given ol.source.TileImage.
@@ -5857,6 +5824,12 @@ function () {
      */
 
     this.map_ = olMap;
+    /**
+     * @type {boolean}
+     * @private
+     */
+
+    this.shouldRequestNextLevel = false;
     var proxy = this.source_.get('olcs.proxy');
 
     if (proxy) {
@@ -5889,11 +5862,29 @@ function () {
   _proto.handleSourceChanged_ = function handleSourceChanged_(frameState) {
     if (!this.ready_ && this.source_.getState() == 'ready') {
       this.projection_ = _util_js__WEBPACK_IMPORTED_MODULE_1__["default"].getSourceProjection(this.source_) || this.fallbackProj_;
+      var options = {
+        numberOfLevelZeroTilesX: 1,
+        numberOfLevelZeroTilesY: 1
+      };
+
+      if (this.source_.tileGrid !== null) {
+        // Get the number of tiles at level 0 if it is defined
+        this.source_.tileGrid.forEachTileCoord(this.projection_.getExtent(), 0, function (_ref) {
+          var zoom = _ref[0],
+              xIndex = _ref[1],
+              yIndex = _ref[2];
+          options.numberOfLevelZeroTilesX = xIndex + 1;
+          options.numberOfLevelZeroTilesY = yIndex + 1;
+        });
+      }
 
       if (this.projection_ == Object(ol_proj_js__WEBPACK_IMPORTED_MODULE_0__["get"])('EPSG:4326')) {
-        this.tilingScheme_ = new Cesium.GeographicTilingScheme();
+        // Cesium zoom level 0 is OpenLayers zoom level 1 for layer in EPSG:4326 with a single tile on level 0
+        this.shouldRequestNextLevel = options.numberOfLevelZeroTilesX === 1 && options.numberOfLevelZeroTilesY === 1;
+        this.tilingScheme_ = new Cesium.GeographicTilingScheme(options);
       } else if (this.projection_ == Object(ol_proj_js__WEBPACK_IMPORTED_MODULE_0__["get"])('EPSG:3857')) {
-        this.tilingScheme_ = new Cesium.WebMercatorTilingScheme();
+        this.shouldRequestNextLevel = false;
+        this.tilingScheme_ = new Cesium.WebMercatorTilingScheme(options);
       } else {
         return;
       }
@@ -5913,7 +5904,7 @@ function () {
   _proto.getTileCredits = function getTileCredits(x, y, level) {
     var extent = this.map_.getView().calculateExtent(this.map_.getSize());
     var center = this.map_.getView().getCenter();
-    var zoom = this.tilingScheme_ instanceof Cesium.GeographicTilingScheme ? level + 1 : level;
+    var zoom = this.shouldRequestNextLevel ? level + 1 : level;
     var frameState = {
       viewState: {
         zoom: zoom,
@@ -5947,11 +5938,14 @@ function () {
     var tileUrlFunction = this.source_.getTileUrlFunction();
 
     if (tileUrlFunction && this.projection_) {
-      // Perform mapping of Cesium tile coordinates to OpenLayers tile coordinates:
-      // 1) Cesium zoom level 0 is OpenLayers zoom level 1 for EPSG:4326
-      var z_ = this.tilingScheme_ instanceof Cesium.GeographicTilingScheme ? level + 1 : level; // 2) OpenLayers tile coordinates increase from bottom to top
+      var z_ = this.shouldRequestNextLevel ? level + 1 : level;
+      var y_ = y;
 
-      var y_ = -y - 1;
+      if (!olUseNewCoordinates) {
+        // OpenLayers version 3 to 5 tile coordinates increase from bottom to top
+        y_ = -y - 1;
+      }
+
       var url = tileUrlFunction.call(this.source_, [z_, x, y_], 1, this.projection_);
 
       if (this.proxy_) {
@@ -6086,9 +6080,7 @@ __webpack_require__.r(__webpack_exports__);
  * @property {!Cesium.BillboardCollection} billboards
  */
 
-var VectorLayerCounterpart =
-/*#__PURE__*/
-function () {
+var VectorLayerCounterpart = /*#__PURE__*/function () {
   /**
   * Result of the conversion of an OpenLayers layer to Cesium.
   * @param {!(ol.proj.Projection|string)} layerProjection
@@ -6519,6 +6511,17 @@ module.exports = ol.proj;
 
 /***/ }),
 
+/***/ "ol/source.js":
+/*!****************************!*\
+  !*** external "ol.source" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ol.source;
+
+/***/ }),
+
 /***/ "ol/source/Cluster.js":
 /*!************************************!*\
   !*** external "ol.source.Cluster" ***!
@@ -6541,7 +6544,7 @@ module.exports = ol.source.Image;
 
 /***/ }),
 
-/***/ "ol/source/ImageStatic":
+/***/ "ol/source/ImageStatic.js":
 /*!****************************************!*\
   !*** external "ol.source.ImageStatic" ***!
   \****************************************/
