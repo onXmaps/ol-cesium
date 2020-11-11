@@ -2,7 +2,7 @@
  * @module examples.mvt
  */
 import OLCesium from 'olcs/OLCesium.js';
-import MVTImageryProvider from 'olcs/MVTImageryProvider.js';
+// import MVTImageryProvider from 'olcs/MVTImageryProvider.js';
 
 import olMap from 'ol/Map.js';
 import './_proj21781.js';
@@ -21,34 +21,44 @@ Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOi
 const projection = getProjection('EPSG:3857');
 console.assert(projection);
 
-function createMVTStyle() {
+let styleNumber = 0;
+
+function createMVTStyle(color = 'purple') {
   return [
     new Style({
       stroke: new Stroke({
-        color: 'purple',
+        color,
         width: 4
       })
     })
   ];
 }
 
+const allStyles = [
+  createMVTStyle(),
+  createMVTStyle('red'),
+];
 
 function createMVTLayer(url, maxZoom) {
   const source = new VectorTileSource({
     url,
+    attributions: 'Schweizmobil',
     format: new MVT(),
   });
-  const styles = createMVTStyle();
-  const swissExtentDegrees = [5.2, 45.45, 11, 48];
-  source.set('olcs.provider', new MVTImageryProvider({
-    credit: new Cesium.Credit('Schweizmobil', false),
-    urls: [url],
-    styleFunction: () => styles,
-    rectangle: new Cesium.Rectangle(...swissExtentDegrees.map(Cesium.Math.toRadians)),
-    minimumLevel: 6,
-  }));
+  const styles = allStyles[styleNumber];
+  // const swissExtentDegrees = [5.2, 45.45, 11, 48];
+  // source.set('olcs_provider', new MVTImageryProvider({
+  //   credit: new Cesium.Credit('Schweizmobil', false),
+  //   urls: [url],
+  //   styleFunction: () => styles,
+  //   rectangle: new Cesium.Rectangle(...swissExtentDegrees.map(Cesium.Math.toRadians)),
+  //   minimumLevel: 6,
+  // }));
+  source.set('olcs_skip', false);
+  source.set('olcs_minimumLevel', 6);
   return new VectorTileLayer({
     source,
+    extent: [572215, 5684416, 1277662, 6145307], // swiss extent
     opacity: 0.6,
     style: styles
   });
@@ -60,7 +70,7 @@ export const mvtLayer = createMVTLayer(
 
 function createOSMLayer() {
   const source = new OSMSource();
-  //source.set('olcs.provider', new Cesium.OpenStreetMapImageryProvider());
+  //source.set('olcs_provider', new Cesium.OpenStreetMapImageryProvider());
   return new TileLayer({source});
 }
 
@@ -88,3 +98,7 @@ ol2d.getView().fit([
 
 
 document.getElementById('enable').addEventListener('click', () => ol3d.setEnabled(!ol3d.getEnabled()));
+document.getElementById('toggle').addEventListener('click', () => {
+  styleNumber = (styleNumber + 1) % 2;
+  mvtLayer.setStyle(allStyles[styleNumber]);
+});
