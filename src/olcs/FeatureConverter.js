@@ -5,6 +5,7 @@ import olGeomGeometry from 'ol/geom/Geometry.js';
 import olStyleIcon from 'ol/style/Icon.js';
 import olSourceVector from 'ol/source/Vector.js';
 import olSourceCluster from 'ol/source/Cluster.js';
+import {LineString} from 'ol/geom';
 import {circular as olCreateCircularPolygon} from 'ol/geom/Polygon.js';
 import {boundingExtent, getCenter} from 'ol/extent.js';
 import olGeomSimpleGeometry from 'ol/geom/SimpleGeometry.js';
@@ -1273,6 +1274,11 @@ class FeatureConverter {
    * @api
    */
   convert(layer, view, feature, context) {
+    // Disable converting lines.
+    if (feature.constructor === LineString) {
+      return null;
+    }
+
     const proj = view.getProjection();
     const resolution = view.getResolution();
 
